@@ -1,14 +1,16 @@
 <template>
   <div id="app">
     <the-header></the-header>
-    <user></user>
-    <admin></admin>
+    <div class="d-flex flex-column w-100">
+      <component :is="page"></component> <!-- composant dynamique -->
+    </div>
   </div>
 </template>
 
 <script>
-// import local components
-import TheHeader from './components/TheHeader.vue';
+import { eventBus } from './main';
+
+import TheHeader from './components/TheHeader';
 import User from './components/features/User/User';
 import Admin from './components/features/Admin/Admin';
 
@@ -20,6 +22,16 @@ export default {
     TheHeader,
     User,
     Admin
+  },
+  data() {
+    return {
+      page: eventBus.page
+    }
+  },
+  created() { // on ecoute les changements de attribut .page de eventBus
+    eventBus.$on('update:page', (page) => { // mise a jour de la propriete .page
+      this.page = page;
+    })
   }
 }
 </script>
