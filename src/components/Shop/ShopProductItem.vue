@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div class="w-25 border product-container">
+    Item
+  </div>
 </template>
 
 
@@ -12,5 +14,7 @@ export default {
 
 
 <style lang="scss">
-
+.product-container {
+  height: 400px;
+}
 </style>
