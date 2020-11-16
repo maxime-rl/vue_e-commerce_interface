@@ -55,12 +55,12 @@ export const eventBus = new Vue({
     cart: [
 
     ],
-    page: 'User'
+    page: 'Admin'
   },
   methods: {
     addProductToCart(product) {
       if (!this.cart.map(i => i.id).includes(product.id)) { // on evite de pouvoir ajouter deux fois le meme produit dans le panier. on utilise .map pour transformer notre array produit en juste array id, afin d utiliser la methode .include de ES6
-        this.cart = [...this.cart, product]; // afin de ne pas passer notre produit par reference, on utilise la notation ES6 pour deconstruire l'objet et prendre toutes les key (les valeurs) de l'objet et les placers dans un nouvel objet
+        this.cart = [...this.cart, product]; // afin de ne pas passer notre produit par reference, on utilise la notation ES6 pour deconstruire l'objet et prendre toutes les key de l'objet et les placers dans un nouvel objet
         this.$emit('update:cart', this.cart.slice()); // on utilise .sclice() pour retourner une copie de this.cart avec une nouvelle reference, afin d'eviter les conflits entre nos differents array et objet
       }
     },
@@ -71,6 +71,10 @@ export const eventBus = new Vue({
     changePage(page) {
       this.page = page; // pas besoin d utiliser .slice ou autre car on recupere une chaine de caractere, donc par defaut copié par valeur
       this.$emit('update:page', this.page);
+    },
+    addProduct(product) {
+      this.products = [ ...this.products, { ...product, id: this.products.length + 1 + '' }]; // on deconstruit le product qu'on recupere en param afin de le mettre dans un nouvel objet et d'ajouter une nouvelle key ( la id)
+      this.$emit('update:products', this.products);
     }
   }
 })
