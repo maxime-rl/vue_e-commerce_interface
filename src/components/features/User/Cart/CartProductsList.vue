@@ -21,12 +21,12 @@ export default {
   props: [ 'cart' ],
   computed: {
     total() {
-      return this.cart.reduce((acc, v) => { // .reduce est une methode permettant de definir une fonction callback
+      return this.cart.reduce((acc, v) => { // .reduce est une methode permettant de definir une fonction callback et permet d'appliquer une fonction qui traite chaque valeur d'un tableau afin de la reduire a une seule valeur
         acc += v.price;
         return acc;
       }, 0)
     }
-  } 
+  }
 }
 
 </script>
