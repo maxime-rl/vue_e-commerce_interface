@@ -5,7 +5,7 @@
     <h5 class="card-title">{{ product.title }}</h5>
     <p class="card-text">{{ product.description }}</p>
     <div class="d-flex justify-content-between">
-        <span class="font-weight-bold">{{ product.price }}</span>
+        <span class="font-weight-bold">{{ product.price }} €</span>
         <a href="#" @click="addProductToCart" class="btn btn-primary btn-sm">Commander</a>
     </div>
   </div>
