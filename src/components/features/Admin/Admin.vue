@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <admin-product-form></admin-product-form>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <admin-product-form></admin-product-form>
+      </div>
+    </div>
   </div>
 </template>
 
