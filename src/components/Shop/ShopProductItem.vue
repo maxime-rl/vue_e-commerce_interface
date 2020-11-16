@@ -6,7 +6,7 @@
     <p class="card-text">{{ product.description }}</p>
     <div class="d-flex justify-content-between">
         <span class="font-weight-bold">{{ product.price }}</span>
-        <a href="#" class="btn btn-primary btn-sm">Commander</a>
+        <a href="#" @click="addProductToCart" class="btn btn-primary btn-sm">Commander</a>
     </div>
   </div>
 </div>
@@ -14,17 +14,13 @@
 
 
 <script>
+import { eventBus } from '../../main';
 
 export default {
-  // data method because we are in a component
-  data() {
-    return {
-      product: {
-        img: 'https://cdn.pixabay.com/photo/2015/03/23/17/25/usb-686358_1280.jpg',
-        title: 'Red ultra 64GB',
-        description: 'Découvrez les clés USB 64 Go, un moyen simple et pratique afin de stocker différentes informations.',
-        price: '30€'
-      }
+  props: ['product'],
+  methods: {
+    addProductToCart() {
+      eventBus.addProductToCart({ ...this.product }) // afin de ne pas passer notre produit par reference on utilise la notation ES6 pour deconstruire l'objet et prendre toutes les key (les valeurs) de l'objet et les placers dans un nouvel objet
     }
   }
 }
