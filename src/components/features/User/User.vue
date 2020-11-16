@@ -7,8 +7,8 @@
 
 
 <script>
-import Shop from './Shop/Shop.vue';
-import Cart from './Cart/Cart.vue';
+import Shop from './Shop/Shop';
+import Cart from './Cart/Cart';
 
 export default {
   components: {
