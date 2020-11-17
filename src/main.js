@@ -3,8 +3,14 @@ import App from './App.vue'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/custom_css/main.scss'
+import * as Filters from './utils/filters'
 
 Vue.config.productionTip = false
+
+// register filters, Object.keys retourne un tableau retournant les clé d'un objet (ici Filter)
+Object.keys(Filters).forEach ( (f) => {
+  Vue.filter(f, Filters[f]);
+})
 
 // initialisation du eventBus
 export const eventBus = new Vue({
