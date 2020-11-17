@@ -2,7 +2,7 @@
 <div class="d-flex justify-content-between pt-2">
   <span>{{ item.title }}</span>
   <span class="font-weight-bold">{{ item.price | price }}</span> <!-- | price est l'ajout du filter -->
-  <button @click="removeItemFromCart" class="close">
+  <button @click="deleteOne(item.id)" class="close">
     <span>&times;</span>
   </button>
 </div>
@@ -10,14 +10,12 @@
 
 
 <script>
-import { eventBus } from '../../../../main';
+import { mapMutations } from 'vuex';
 
 export default {
   props: ['item'], // reception des produits
   methods: {
-    removeItemFromCart() {
-      eventBus.removeItemFromCart({ ...this.item });
-    }
+    ...mapMutations('cart', ['deleteOne'])
   }
 }
 

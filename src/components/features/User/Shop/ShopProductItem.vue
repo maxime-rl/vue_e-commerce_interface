@@ -6,7 +6,7 @@
     <p class="card-text">{{ product.description }}</p>
     <div class="d-flex justify-content-between">
         <span class="font-weight-bold">{{ product.price | price }}</span> <!-- | price est l'ajout du filter -->
-        <a href="#" @click="addProductToCart" class="btn btn-primary btn-sm">Commander</a>
+        <a href="#" @click="addOne(product)" class="btn btn-primary btn-sm">Commander</a>
     </div>
   </div>
 </div>
@@ -14,14 +14,12 @@
 
 
 <script>
-import { eventBus } from '../../../../main';
+import { mapMutations } from 'vuex';
 
 export default {
   props: ['product'],
   methods: {
-    addProductToCart() {
-      eventBus.addProductToCart({ ...this.product }) // afin de ne pas passer notre produit par reference on utilise la notation ES6 pour deconstruire l'objet et prendre toutes les key (les valeurs) de l'objet et les placers dans un nouvel objet
-    }
+    ...mapMutations('cart', ['addOne'])
   }
 }
 
