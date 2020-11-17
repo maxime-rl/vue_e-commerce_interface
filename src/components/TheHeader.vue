@@ -1,5 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <transition appear>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Logo
     <!--<img src="../assets/logo.png" alt="">-->
   </a>
@@ -17,6 +18,7 @@
     </ul>
   </div>
 </nav>
+  </transition>
 </template>
 
 
@@ -49,7 +51,21 @@ nav a img {
   width: 40px;
   height: 40px;
 }
+
 a {
   cursor: pointer;
 }
+
+@keyframes fromtop {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+  }
+}
+
+.v-enter-active {
+  animation: fromtop 1s;
+}
+
 </style>
