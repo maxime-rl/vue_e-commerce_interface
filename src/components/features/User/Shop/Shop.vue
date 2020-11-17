@@ -1,27 +1,15 @@
 <template>
-  <shop-products-list :products="products" class="p-4">
-  </shop-products-list>
+  <shop-products-list :products="products" class="p-4"></shop-products-list>
 </template>
 
 
 <script>
 import ShopProductsList from './ShopProductsList';
-import { eventBus } from '../../../../main';
 
 export default {
+  props: ['products'],
   components: {
     ShopProductsList
-  },
-  data() {
-    return {
-      products: []
-    }
-  },
-  created() {
-    this.products = eventBus.products;
-    eventBus.$on('update:products', (products) => {
-      this.products = products;
-    })
   }
 }
 
