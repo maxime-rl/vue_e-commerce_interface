@@ -60,23 +60,33 @@ export default {
       },
       formIsValid() {
         this.errors = [];
+        // validation image
         if (!this.form.img) {
           this.errors.push('img required');
         }
+        // validation description
         if (!this.form.title) {
           this.errors.push('title required');
         }
+        if (this.form.title.length > 20) {
+          this.errors.push('Le titre ne doit pas comporter plus de 20 caractères');
+        }
+        // validation description
         if (!this.form.description) {
           this.errors.push('description required');
         }
+        if (this.form.description.length > 70) {
+          this.errors.push('La description ne doit pas comporter plus de 70 caractères');
+        }
+        // validation price
         if (!this.form.price) {
           this.errors.push('price required');
         }
+
         return this.errors.length ? false : true;
       }
     }
   }
-
 
 </script>
 

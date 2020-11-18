@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <the-header></the-header>
-    <div class="d-flex flex-column w-100">
+    <div class="d-flex flex-column w-100 background">
       <router-view></router-view>
     </div>
   </div>
@@ -19,5 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
-
+.background {
+  min-height: 100vh;
+  background-color: #eeeeee;
+}
 </style>

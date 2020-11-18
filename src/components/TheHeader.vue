@@ -1,6 +1,5 @@
 <template>
-  <transition appear>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Logo
     <!--<img src="../assets/logo.png" alt="">-->
   </a>
@@ -16,9 +15,11 @@
         <router-link class="nav-link" to="/admin">Admin</router-link>
       </li>
     </ul>
+    <div class="shopping-cart">
+      <img class="w-25" src="../assets/shopping-cart.svg" alt="">
+    </div>
   </div>
 </nav>
-  </transition>
 </template>
 
 
@@ -35,20 +36,9 @@ nav a img {
   height: 40px;
 }
 
-a {
+a,
+img {
   cursor: pointer;
-}
-
-@keyframes fromtop {
-  from {
-    transform: translateY(-20px);
-  }
-  to {
-  }
-}
-
-.v-enter-active {
-  animation: fromtop 1s;
 }
 
 .router-link-active {
