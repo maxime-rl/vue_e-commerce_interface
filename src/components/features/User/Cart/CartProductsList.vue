@@ -6,7 +6,10 @@
         <!-- key requise quand on utilise v-for sur un composant  -->
         <cart-product-item v-for="item in cart" :key="item.id" :item="item"></cart-product-item>
         <hr class="w-100">
-        <span>Total : {{ total }} €</span>
+        <div class="d-flex justify-content-between">
+          <span class="font-weight-bold">Total : {{ total }} €</span>
+          <a href="#">Valider</a>
+        </div>
       </div>
     </template>
   </transition>
@@ -31,7 +34,7 @@
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
   .cart-product {
     background-color: white;
     margin: 33px 10px 10px 10px;
@@ -39,6 +42,18 @@
     box-shadow: 0px 0px 13px -8px rgba(0, 0, 0, 0.75);
     border-radius: .25rem;
   }
+
+  a {
+      text-decoration: none;
+      color: rgb(46, 95, 202);
+      background: linear-gradient(to top, rgb(46, 95, 202) 0%, rgb(46, 95, 202) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+      transition: background-size .5s;
+      &:hover {
+        background-size: 70% 100%;
+        color: rgb(46, 95, 202);
+        text-decoration: none;
+      }
+    }
 
   @keyframes fromtop {
   from {

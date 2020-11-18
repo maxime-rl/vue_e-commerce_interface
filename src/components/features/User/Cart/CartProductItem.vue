@@ -1,10 +1,12 @@
 <template>
 <div class="d-flex justify-content-between pt-2">
   <span>{{ item.title }}</span>
-  <span class="font-weight-bold">{{ item.price | price }}</span> <!-- | price est l'ajout du filter -->
-  <button @click="deleteOne(item.id)" class="close">
+  <div>
+    <span class="font-weight-bold">{{ item.price | price }}</span> <!-- | price est l'ajout du filter -->
+    <button @click="deleteOne(item.id)" class="close ml-3">
     <span>&times;</span>
   </button>
+  </div>
 </div>
 </template>
 

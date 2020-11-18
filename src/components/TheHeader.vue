@@ -1,5 +1,6 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light">
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Logo
     <!--<img src="../assets/logo.png" alt="">-->
   </a>
@@ -15,11 +16,11 @@
         <router-link class="nav-link" to="/admin">Admin</router-link>
       </li>
     </ul>
-    <div class="shopping-cart">
-      <img class="w-25" src="../assets/shopping-cart.svg" alt="">
-    </div>
+      <img class="shopping-cart" src="../assets/shopping-cart.svg" alt="">
   </div>
 </nav>
+</div>
+    
 </template>
 
 
@@ -43,5 +44,9 @@ img {
 
 .router-link-active {
   color: #1c1c1c;
+}
+
+.shopping-cart {
+  width: 30px;
 }
 </style>

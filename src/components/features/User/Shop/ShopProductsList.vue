@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-row flex-wrap">
+  <div class="d-flex flex-row flex-wrap justify-content-center">
     <!-- key requise quand on utilise v-for sur un composant  -->
     <shop-product-item v-for="product in products" :key="product.id" :product="product"></shop-product-item> 
   </div>

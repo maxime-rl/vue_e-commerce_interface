@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-9">
+      <div class="col-xl-9">
           <shop :products="products"></shop>
       </div>
-      <div class="col-3">
+      <div class="col-xl-3">
         <cart :cart="cart"></cart>
       </div>
     </div>

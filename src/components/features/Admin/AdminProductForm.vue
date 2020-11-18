@@ -3,7 +3,7 @@
     <h4>Ajouter un produit :</h4>
     <hr class="w-100">
     <div class="form-group">
-      <label>Image</label>
+      <label>Image (url)</label>
       <input v-model="form.img" type="text" class="form-control">
     </div>
     <div class="form-group">
@@ -68,15 +68,15 @@ export default {
         if (!this.form.title) {
           this.errors.push('title required');
         }
-        if (this.form.title.length > 20) {
-          this.errors.push('Le titre ne doit pas comporter plus de 20 caractères');
+        if (this.form.title.length > 18) {
+          this.errors.push('Le titre ne doit pas comporter plus de 18 caractères');
         }
         // validation description
         if (!this.form.description) {
           this.errors.push('description required');
         }
-        if (this.form.description.length > 70) {
-          this.errors.push('La description ne doit pas comporter plus de 70 caractères');
+        if (this.form.description.length > 68) {
+          this.errors.push('La description ne doit pas comporter plus de 68 caractères');
         }
         // validation price
         if (!this.form.price) {

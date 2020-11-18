@@ -8,9 +8,11 @@ import router from './router';
 import axios from 'axios';
 import store from './store/store';
 
+
 Vue.config.productionTip = false;
 axios.defaults.baseURL = 'https://vue-e-commerce-interface.firebaseio.com/';
 Vue.prototype.$http = axios;
+
 
 // register filters, Object.keys retourne un tableau retournant les clé d'un objet (ici Filter)
 Object.keys(Filters).forEach ( (f) => {
