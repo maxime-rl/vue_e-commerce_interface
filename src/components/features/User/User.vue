@@ -1,7 +1,13 @@
 <template>
-  <div class="d-flex flex-row">
-      <shop :products="products" class="w-75"></shop>
-      <cart :cart="cart" class="w-25"></cart>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-9">
+          <shop :products="products"></shop>
+      </div>
+      <div class="col-3">
+        <cart :cart="cart"></cart>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -32,6 +38,13 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
+.v-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
 
+.v-leave-active {
+  transition: all 1s;
+}
 </style>

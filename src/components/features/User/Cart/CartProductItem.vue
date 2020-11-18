@@ -23,5 +23,11 @@ export default {
 
 
 <style lang="scss">
+button:focus {
+      outline: 0px;
+}
 
+.close:hover{
+  color: #ec1414;
+}
 </style>
