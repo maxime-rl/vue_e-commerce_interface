@@ -8,7 +8,7 @@
         <hr class="w-100">
         <div class="d-flex justify-content-between">
           <span class="font-weight-bold">Total : {{ total }} €</span>
-          <a href="#">Valider</a>
+          <a class="font-weight-bold" href="#">Valider</a>
         </div>
       </div>
     </template>
@@ -35,6 +35,7 @@
 
 
 <style lang="scss" scoped>
+@import '../../../../assets/custom_css/main.scss';
   .cart-product {
     background-color: white;
     margin: 33px 10px 10px 10px;
@@ -43,17 +44,7 @@
     border-radius: .25rem;
   }
 
-  a {
-      text-decoration: none;
-      color: rgb(46, 95, 202);
-      background: linear-gradient(to top, rgb(46, 95, 202) 0%, rgb(46, 95, 202) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
-      transition: background-size .5s;
-      &:hover {
-        background-size: 70% 100%;
-        color: rgb(46, 95, 202);
-        text-decoration: none;
-      }
-    }
+  a { @include blue-decoration-text; }
 
   @keyframes fromtop {
   from {
@@ -67,5 +58,9 @@
 
 .v-enter-active {
   animation: fromtop 1s;
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0;
 }
 </style>

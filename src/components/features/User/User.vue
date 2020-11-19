@@ -20,7 +20,7 @@ import { mapState } from 'vuex';
 export default {
   components: {
     Shop,
-    Cart
+    Cart,
   },
   computed: {
     ...mapState('product', { // on recupere les produits avec le helper mapState, le namespaced (product) et un alias (ici products) qui correspond à datas. datas va etre recuperer dans une key products

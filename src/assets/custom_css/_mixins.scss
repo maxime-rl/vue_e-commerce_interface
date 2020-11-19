@@ -1,0 +1,12 @@
+// mixins exemple use in scss :     a { @include blue-decoration-text; }
+
+@mixin blue-decoration-text {
+  text-decoration: none;
+      color: $blue;
+      background: linear-gradient(to top, $blue 0%, $blue 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+      transition: background-size .5s;
+      &:hover {
+        background-size: 70% 100%;
+        color: $blue;
+      }
+}

@@ -1,8 +1,9 @@
 <template>
-<transition appear>
+<div>
+  <transition appear>
 <div class="card" style="width: 12rem;">
   <div class="img-container">
-    <img :src=product.img class="card-img-top img-fluid" alt="...">
+    <img :src=product.img @click="showModal = true" class="card-img-top img-fluid" alt="...">
   </div>
   <div class="card-body">
     <h6 class="card-title">{{ product.title }}</h6>
@@ -14,23 +15,42 @@
   </div>
 </div>
 </transition>
+      <!-- use the modal component, pass in the prop -->
+      <modal v-if="showModal" @close="showModal = false">
+        <!-- custom content here to overwrite default content  -->
+          <div slot="body">
+              <img :src=product.img @click="showModal = true" class="img-fluid" alt="...">
+          </div>
+      </modal>
+</div>
 </template>
 
 
 <script>
+import Modal from './Modal';
 import { mapMutations } from 'vuex';
 
 export default {
+  components: {
+    Modal
+  },
   props: ['product'],
+  data() {
+    return {
+      showModal: false
+    }
+  },
   methods: {
     ...mapMutations('cart', ['addOne'])
   }
 }
 
+
 </script>
 
 
 <style lang="scss" scoped>
+@import '../../../../assets/custom_css/main.scss';
 .product-container {
   height: 400px;
 }
@@ -71,22 +91,13 @@ p{
     span {
       font-size: 14px;
     }
-    a {
-      text-decoration: none;
-      color: rgb(46, 95, 202);
-      background: linear-gradient(to top, rgb(46, 95, 202) 0%, rgb(46, 95, 202) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
-      transition: background-size .5s;
-      &:hover {
-        background-size: 70% 100%;
-        color: rgb(46, 95, 202);
-      }
-    }
+    a { @include blue-decoration-text; }
   }
 }
 @keyframes frombottom {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;

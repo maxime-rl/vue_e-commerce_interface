@@ -1,13 +1,16 @@
-// fonts
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import 'fonts.scss';
+@import 'colors.scss';
+@import 'mixins.scss';
+
 
 html, body {
-    font-family: 'Lato', sans-serif;
+    font-family: $lato;
 }
 
 #app {
-    font-family: 'Lato', sans-serif;
+    font-family: $lato;
 }
+
 h1,
 h2,
 h3,
@@ -15,8 +18,10 @@ h4,
 h5,
 h6{
     font-weight: 700;
-    color: #202020;
+    color: $dark-grey;
 }
 p{
-    color: #202020;
+    color: $dark-grey;
 }
+
+
