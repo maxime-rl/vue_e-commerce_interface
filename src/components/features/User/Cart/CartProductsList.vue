@@ -38,9 +38,9 @@
 @import '../../../../assets/custom_css/main.scss';
   .cart-product {
     background-color: white;
-    margin: 33px 10px 10px 10px;
-    padding: 15px;
-    box-shadow: 0px 0px 13px -8px rgba(0, 0, 0, 0.75);
+    margin: 3.5rem 1rem 1rem 1rem;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 1.3px -8px rgba(0, 0, 0, 0.75);
     border-radius: .25rem;
   }
 
@@ -56,11 +56,25 @@
   }
 }
 
-.v-enter-active {
+.v-enter-active  {
   animation: fromtop 1s;
 }
 
-.v-enter, .v-leave-to {
+.v-enter {
   opacity: 0;
+}
+
+.v-leave-to {
+  animation: fromtop-2 1s;
+}
+
+@keyframes fromtop-2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
 }
 </style>

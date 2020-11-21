@@ -51,10 +51,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../../../assets/custom_css/main.scss';
-.product-container {
-  height: 400px;
-}
-
 p{
   font-size: 14px;
   line-height: 1rem;

@@ -95,6 +95,18 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
+.form-control {
+  background-color: white;
+  border: 0px;
+  &:focus {
+    background-color: white;
+    border-color: #eeeeee;
+    border: 0px;
+    box-shadow: 0 0 2px #007bff;
+    outline: none;
+  }
+}
+
 
 </style>

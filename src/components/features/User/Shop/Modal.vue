@@ -27,9 +27,6 @@ export default {
 
 
 <style lang="scss" scoped>
-@import '../../../../assets/custom_css/main.scss';
-
-/* modal */
 .modal-mask {
   position: fixed;
   z-index: 9998;

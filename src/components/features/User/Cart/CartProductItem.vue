@@ -1,6 +1,6 @@
 <template>
 <transition appear name="appear-item">
-<div class="d-flex justify-content-between pt-2">
+<div class="d-flex justify-content-between pt-3">
   <span>{{ item.title }}</span>
   <div>
     <span>{{ item.price | price }}</span> <!-- | price est l'ajout du filter -->
@@ -36,17 +36,4 @@ button:focus {
   color: $red;
 }
 
-  @keyframes fromtop {
-  from {
-    opacity: 0;
-    transform: translateY(2px);
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.appear-item-enter-active {
-  animation: fromtop .5s;
-}
 </style>

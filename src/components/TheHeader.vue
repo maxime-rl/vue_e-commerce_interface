@@ -1,9 +1,8 @@
 <template>
-<div class="container-fluid">
+<div class="container">
   <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="#">Logo
+  <div class="navbar-brand">Logo</div>
     <!--<img src="../assets/logo.png" alt="">-->
-  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,27 +25,45 @@
 
 <script>
 export default {
-  
+ 
 }
 </script>
 
 
 <style lang="scss" scoped>
-nav a img {
-  width: 40px;
-  height: 40px;
-}
+@import '../assets/custom_css/main.scss';
 
-a,
-img {
+nav {
+  a img {
+  width: 4rem;
+  height: 4rem;
   cursor: pointer;
+  }
+
+  .navbar-brand {
+    margin-right: 3rem;
+  }
+
+ ul li a {
+    font-weight: 700;
+    &:hover {
+      color: $blue!important;
+      transition: color .2s;
+    }
+  }
+
+  .router-link-active {
+  color: $blue!important;
 }
 
-.router-link-active {
-  color: #1c1c1c;
+  .shopping-cart {
+  width: 1.7rem;
+  cursor: pointer;
+  }
 }
 
-.shopping-cart {
-  width: 30px;
+.navbar-light .navbar-nav .nav-link {
+     color: $dark-grey;
 }
+
 </style>
